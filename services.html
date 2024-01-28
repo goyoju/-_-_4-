@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>봉사 지원</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>봉사 지원</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
 
-  <body>
-    <div class="container" id="navbar-container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-logo" href="index.html">
-            <img src="images/로고.png" width="200" height="90" />
-          </a>
+  <style>
+    .slider-container {
+      margin: 20px 0;
+      text-align: center; /* Centering text and elements inside the container */
+    }
 
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+    .slider {
+      width: 50%; /* Reducing the width of the slider */
+      margin: 0 auto; /* Centering the slider */
+    }
+  </style>
+</head>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start"></div>
+<body>
+  <div class="container" id="navbar-container">
+    <!-- Navigation bar content -->
+  </div>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a class="navbar-item" href="index.html"> 봉사안내</a>
-              <a class="navbar-item" href="services.html"> 봉사지원</a>
-              <a class="navbar-item" href="fruits.html"> 기부안내</a>
-              <a class="navbar-item" href="contact.html"> 문의</a>
-              <div class="buttons">
-                <a class="button is-primary is-orange" href="login.html">
-                  <strong>로그인</strong>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <section class="section">
-      <div class="container">
-        <div class="has-text-centered" id="services-text-container">
-          <h1 class="title is-1">봉사 지원</h1>
-          <h4 class="subtitle">
-            현재 위치 : Boston, Massachusetts
-          </h4>
-        </div>
-        <br />
-        <div class="slider-container has-text-centered">
-          <input type="range" min="0" max="50" value="25" class="slider" id="myRange">
-          <p>거리: <span id="distance">25</span> mi</p>
-        </div>
-        <br />
+  <section class="section">
+    <div class="container">
+      <div class="has-text-centered" id="services-text-container">
+        <h1 class="title is-1">봉사 지원</h1>
+        <h4 class="subtitle">
+          현재 위치 : Boston, Massachusetts
+        </h4>
+      </div>
+      <br />
+      <div class="slider-container has-text-centered">
+        <input type="range" min="0" max="50" value="25" class="slider" id="myRange">
+        <p>거리: <span id="distance">25</span> mi</p>
+      </div>
         <div class="columns">
           <div class="column">
             <div class="card">
@@ -250,15 +225,26 @@
           </div>
         </div>
       </div>
+  
 
-      <footer class="footer-secondary">
-        <div class="content has-text-centered">
-          <p>
-            Copyright © 2021 Tropico Template ♥ by
-            <a href="https://github.com/restylianos">restylianos</a>
-          </p>
-        </div>
-      </footer>
-    </section>
-  </body>
+  <footer class="footer-secondary">
+    <div class="content has-text-centered">
+      <p>
+        Copyright © 2021 Tropico Template ♥ by
+        <a href="https://github.com/restylianos">restylianos</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("distance");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+  </script>
+</body>
 </html>
